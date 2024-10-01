@@ -12,8 +12,8 @@ Currently, two official plugins are available:
 Follow these instructions to get the app up and running on your local machine.
 
 ### 1. Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone (https://github.com/AqilJaafree/lyt-trading-fast.git)
+cd lyt-trading-fast
 
 ### 2. Install dependencies
 Run the following command to install all the project dependencies:
