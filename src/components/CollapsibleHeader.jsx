@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
+import ExchangeHeader from "./ExchangeHeader";
 import SearchBar from "./SearchBar";
 import TabBar from "./TabBar";
 
@@ -26,7 +26,7 @@ const CollapsibleHeader = ({ tabs, activeTab, onTabChange, onSearch }) => {
         opacity: opacity,
       }}
     >
-      <Header />
+      <ExchangeHeader />
       <SearchBar onSearch={onSearch} />
       <TabBar tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} />
     </div>
