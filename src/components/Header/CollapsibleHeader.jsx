@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ExchangeHeader from "./ExchangeHeader";
-import SearchBar from "./SearchBar";
+import SearchBar from "../SearchBar";
 import TabBar from "./TabBar";
 
 const CollapsibleHeader = ({ tabs, activeTab, onTabChange, onSearch }) => {

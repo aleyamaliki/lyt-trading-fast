@@ -1,8 +1,8 @@
 import React from 'react';
-import marketGraphData from '../dummyData/marketGraphData'; // Import the dummy data
+import marketGraphData from '../../dummyData/marketGraphData';
 import { Line } from 'react-chartjs-2';
-import { Chart, registerables } from 'chart.js'; // Import Chart.js components
-import { MdArrowUpward, MdArrowDownward } from 'react-icons/md'; // Import icons
+import { Chart, registerables } from 'chart.js'; 
+import { MdArrowUpward, MdArrowDownward } from 'react-icons/md';
 
 // Register Chart.js components
 Chart.register(...registerables);
