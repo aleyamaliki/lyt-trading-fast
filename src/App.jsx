@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import CollapsibleHeader from "./components/CollapsibleHeader.jsx";
+import CryptoList from "./components/CryptoList.jsx";
+import BottomNavigation from "./components/BottomNavigation.jsx";
+import { cryptoData } from "./dummyData/cryptoData.js";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [activeTab, setActiveTab] = useState("All");
+  const [activeNavTab, setActiveNavTab] = useState("Home");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredCryptoData, setFilteredCryptoData] = useState(cryptoData);
+
+  const tabs = ["All", "⭐ Favorites", "Attractive", "Meme", "Staking"];
+
+  useEffect(() => {
+    const filtered = cryptoData.filter((crypto) =>
+      crypto.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredCryptoData(filtered);
+  }, [searchTerm]);
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="bg-backdrop min-h-screen text-white">
+      <CollapsibleHeader
+        tabs={tabs}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        onSearch={handleSearch}
+      />
+      <div className="relative">
+        <CryptoList cryptoData={filteredCryptoData} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <BottomNavigation
+        activeTab={activeNavTab}
+        onTabChange={setActiveNavTab}
+      />
+    </div>
+  );
+};
 
-export default App
+export default App;
