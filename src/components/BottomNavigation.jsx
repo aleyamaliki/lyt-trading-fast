@@ -7,13 +7,13 @@ import { FaWallet } from "react-icons/fa6";
 const BottomNavigation = ({ activeTab, onTabChange }) => {
   const tabs = [
     { name: "Home", icon: <GoHomeFill /> },
-    { name: "Exchange", icon: <BsCurrencyExchange /> },
+    { name: "Tokens", icon: <BsCurrencyExchange /> },
     { name: "Earn", icon: <BsGraphUpArrow /> },
     { name: "Wallet", icon: <FaWallet /> },
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-menuDark flex justify-around items-center p-4">
+    <nav className="w-full bg-menuDark flex justify-around items-center p-4">
       {tabs.map((tab) => (
         <button
           key={tab.name}

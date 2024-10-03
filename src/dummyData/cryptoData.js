@@ -121,3 +121,5 @@ export const cryptoData = [
     change24h: -1.61,
   },
 ];
+
+export default cryptoData
