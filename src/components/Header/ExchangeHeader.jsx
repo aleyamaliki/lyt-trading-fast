@@ -1,7 +1,7 @@
 import React from "react";
 import { CiFilter } from "react-icons/ci";
 
-const Header = () => {
+const ExchangeHeader = () => {
   return (
     <header className="flex justify-between items-center p-4 bg-surface text-white">
       <h1 className="text-xl font-bold">Market Trade</h1>
@@ -12,4 +12,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default ExchangeHeader;
