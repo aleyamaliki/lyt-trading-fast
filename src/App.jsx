@@ -9,6 +9,10 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import ListingPage from "./pages/Listing.jsx";
 import TestComponents from "./pages/testComponets.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import SwapDialog from "./components/Dialog/Swap.jsx";
+
+const queryClient = new QueryClient()
 
 const App = () => {
   const router = createBrowserRouter([
@@ -32,7 +36,12 @@ const App = () => {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <SwapDialog />
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  )
 };
 
 export default App;
