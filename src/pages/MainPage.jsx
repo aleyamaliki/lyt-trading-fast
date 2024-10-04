@@ -2,7 +2,7 @@ import React from "react";
 import data from "@data/cryptoData";
 import recipientData from "@data/recipientData";
 import MarketOne from "@components/Market/MarketOne";
-import LatestRecipient from "@components/LatestRecipient";
+import LatestRecipient from "../components/Recepient/LatestRecipient";
 
 const MainPage = () => {
   return (

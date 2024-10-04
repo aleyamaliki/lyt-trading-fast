@@ -8,7 +8,9 @@ import {
 import MainLayout from "./layouts/MainLayout.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import ListingPage from "./pages/Listing.jsx";
-import TestComponents from "./pages/testComponets.jsx";
+import Home from "./pages/Home.jsx";
+import Earn from "./pages/Earn.jsx";
+import WalletProfile from "./pages/WalletProfile.jsx";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,12 +23,20 @@ const App = () => {
           element: <MainPage />,
         },
         {
+          path: "/home",
+          element: <Home />
+        },
+        {
+          path: "/earn",
+          element: <Earn />
+        },
+        {
           path: "/tokens",
           element: <ListingPage />,
         },
         {
-          path: "/testComponents",
-          element: <TestComponents />,
+          path: "/walletprofile",
+          element: <WalletProfile />,
         },
       ],
     },

@@ -23,7 +23,7 @@ const Rating = () => {
     const filteredData = cryptoData; 
 
     return (
-        <div className="pb-24">
+        <div className="pb-2">
         <div className="bg-menuDark p-6 rounded-lg shadow-lg">
             <h1 className="text-2xl font-bold text-white">⭐Cryptex Rating</h1>
             <RatingTabBar 
