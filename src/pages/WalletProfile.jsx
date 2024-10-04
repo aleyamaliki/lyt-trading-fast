@@ -1,11 +1,11 @@
 import React from "react";
 import recipientData from "@data/recipientData";
-import LatestRecipient from "../components/LatestRecipient";
+import LatestRecipient from "../components/Recepient/LatestRecipient";
 import TabSelector from "../components/TabSelector";
-import AllRecipients from "../components/AllRecepient";
+import AllRecipients from "../components/Recepient/AllRecepient";
 import WelcomeHeader from "../components/Header/WelcomeHeader";
 
-function TestComponents() {
+function WalletProfile() {
   return (
     <>
       <WelcomeHeader userName="Tony Nguyen" />
@@ -16,4 +16,4 @@ function TestComponents() {
   );
 }
 
-export default TestComponents;
+export default WalletProfile;
