@@ -5,7 +5,7 @@ import { LuGift  } from 'react-icons/lu';
 
 const HomeHeader = () => {
     return (
-        <header className="pb-4">
+        <header className="fixed top-0 left-0 right-0 pb-4">
         <div className="bg-menuDark p-4 shadow-md flex justify-between items-center w-full">
             {/* Profile Icon */}
             <div className="flex items-center">
