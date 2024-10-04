@@ -3,20 +3,24 @@ import { GoHomeFill } from "react-icons/go";
 import { BsCurrencyExchange } from "react-icons/bs";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { FaWallet } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const BottomNavigation = ({ activeTab, onTabChange }) => {
   const tabs = [
-    { name: "Home", icon: <GoHomeFill /> },
-    { name: "Exchange", icon: <BsCurrencyExchange /> },
-    { name: "Earn", icon: <BsGraphUpArrow /> },
+    { name: "Home", icon: <GoHomeFill />, to: 
+      '/home'
+    },
+    { name: "Tokens", icon: <BsCurrencyExchange/>},
+    { name: "Earn", icon: <BsGraphUpArrow />, to: '/earn' },
     { name: "Wallet", icon: <FaWallet /> },
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-menuDark flex justify-around items-center p-4">
+    <nav className="w-full bg-menuDark flex justify-around items-center p-4">
       {tabs.map((tab) => (
-        <button
+        <Link
           key={tab.name}
+          to={tab.to}
           className={`flex flex-col items-center `}
           onClick={() => onTabChange(tab.name)}
         >
@@ -28,7 +32,7 @@ const BottomNavigation = ({ activeTab, onTabChange }) => {
             })}
           </span>
           <span className="text-xs">{tab.name}</span>
-        </button>
+        </Link>
       ))}
     </nav>
   );

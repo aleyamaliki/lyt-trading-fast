@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'; 
 import SetupWallet from './SetupWallet';
-import CreateCollection from '../CreateCollection';
+import CreateCollection from './CreateCollection';
 
 const CreateandSellWallet = () => {
   const [activeComponent, setActiveComponent] = useState('wallet');

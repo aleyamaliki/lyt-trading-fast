@@ -1,23 +1,40 @@
 import React, { useState, useEffect } from "react";
-import BottomNavigation from "./components/BottomNavigation.jsx";
-import CreateandSellWallet from "./components/CreateandSellWallet.jsx";
-import SearchBar from "../src/components/SearchBar.jsx"
-import EarnCryptoList from "./EarnCrypto.jsx";
+import { Route, RouterProvider, Routes, createBrowserRouter } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout.jsx";
+import MainPage from "./pages/MainPage.jsx";
+import ListingPage from "./pages/Listing.jsx";
+import Home from "./pages/Home.jsx";
+import Earn from "./pages/Earn.jsx";
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState("All");
-  const [activeNavTab, setActiveNavTab] = useState("Home");
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        {
+          path: "/",
+          element: <MainPage />
+        },
+        {
+          path: "/home",
+          element: <Home />
+        },
+        {
+          path: "/earn",
+          element: <Earn />
+        },
+        {
+          path: "/tokens",
+          element: <ListingPage />
+        },
+      ]
+    },
+  ]);
 
   return (
-    <div className="bg-backdrop min-h-screen text-white">
-      <SearchBar />
-      <CreateandSellWallet/>
-      <EarnCryptoList activeTab={activeTab} onTabChange={setActiveTab}/>
-      <BottomNavigation
-        activeTab={activeNavTab}
-        onTabChange={setActiveNavTab}
-      />
-    </div>
+    <RouterProvider router={router} />
   );
 };
 

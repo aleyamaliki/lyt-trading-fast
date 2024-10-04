@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { cryptoData } from './dummyData/cryptoData';
-import TabBar from './components/TabBar/TabBar'
-import EarnCryptoList from './components/Crypto/EarnCryptoList';
+import { cryptoData } from '../../dummyData/cryptoData';
+import TabBar from '../TabBar/TabBar'
+import EarnCryptoList from './EarnCryptoList';
 
 // Define tab titles separately
 const tabTitles = [
@@ -20,7 +20,7 @@ const EarnCrypto = () => {
     const filteredData = cryptoData;
 
   return (
-    <div className="pb-24">
+    <div>
     <div className="bg-surface p-6 rounded-lg shadow-lg">
         <TabBar 
             tabs={tabTitles}
