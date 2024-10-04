@@ -10,7 +10,7 @@ export default {
         secondary: "#7e8088",
         secondary2: "#D9D9D9",
         surface: "#11150f",
-        red: "#d33535",
+        // red: "#d33535",
         critical: "#f53966",
         remake: "#f5c738",
         line: "#393737",
