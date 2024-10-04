@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Route, RouterProvider, Routes, createBrowserRouter } from "react-router-dom";
+import {
+  Route,
+  RouterProvider,
+  Routes,
+  createBrowserRouter,
+} from "react-router-dom";
 import MainLayout from "./layouts/MainLayout.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import ListingPage from "./pages/Listing.jsx";
 import Home from "./pages/Home.jsx";
 import Earn from "./pages/Earn.jsx";
+import WalletProfile from "./pages/WalletProfile.jsx";
 
 const App = () => {
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -15,7 +20,7 @@ const App = () => {
       children: [
         {
           path: "/",
-          element: <MainPage />
+          element: <MainPage />,
         },
         {
           path: "/home",
@@ -27,15 +32,17 @@ const App = () => {
         },
         {
           path: "/tokens",
-          element: <ListingPage />
+          element: <ListingPage />,
         },
-      ]
+        {
+          path: "/walletprofile",
+          element: <WalletProfile />,
+        },
+      ],
     },
   ]);
 
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

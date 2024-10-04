@@ -10,9 +10,9 @@ const BottomNavigation = ({ activeTab, onTabChange }) => {
     { name: "Home", icon: <GoHomeFill />, to: 
       '/home'
     },
-    { name: "Tokens", icon: <BsCurrencyExchange/>},
+    { name: "Tokens", icon: <BsCurrencyExchange/>, to: '/earn'},
     { name: "Earn", icon: <BsGraphUpArrow />, to: '/earn' },
-    { name: "Wallet", icon: <FaWallet /> },
+    { name: "Wallet", icon: <FaWallet />, to: '/walletprofile' },
   ];
 
   return (
