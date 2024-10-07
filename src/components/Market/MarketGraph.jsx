@@ -8,9 +8,8 @@ import { MdArrowUpward, MdArrowDownward } from 'react-icons/md';
 Chart.register(...registerables);
 
 const MarketGraph = () => {
-    const chartRef = useRef(null); // Reference to the chart
+    const chartRef = useRef(null); 
 
-    // Predefined colors for each graph
     const colors = [
         { borderColor: '#25c866', gradientStart: 'rgba(37, 200, 102, 0.5)', gradientEnd: 'rgba(37, 200, 102, 0)' },
         { borderColor: '#ff6384', gradientStart: 'rgba(255, 99, 132, 0.5)', gradientEnd: 'rgba(255, 99, 132, 0)' },
@@ -19,20 +18,18 @@ const MarketGraph = () => {
     ];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-4">
             {marketGraphData.map((crypto, index) => {
-                // Select color set based on the index (looping through the colors)
                 const color = colors[index % colors.length];
 
                 const firstPrice = crypto.priceHistory[0];
                 const lastPrice = crypto.priceHistory[crypto.priceHistory.length - 1];
                 const percentageChange = ((lastPrice - firstPrice) / firstPrice) * 100;
 
-                // Creating a unique gradient background for each chart
                 const gradientBackground = (ctx) => {
                     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                    gradient.addColorStop(0, color.gradientStart); // Top gradient color
-                    gradient.addColorStop(1, color.gradientEnd);   // Bottom gradient color (transparent)
+                    gradient.addColorStop(0, color.gradientStart); 
+                    gradient.addColorStop(1, color.gradientEnd);  
                     return gradient;
                 };
 
@@ -42,13 +39,13 @@ const MarketGraph = () => {
                         {
                             label: `${crypto.name} Price (${crypto.currency})`,
                             data: crypto.priceHistory,
-                            borderColor: color.borderColor, // Unique line color
+                            borderColor: color.borderColor,
                             backgroundColor: (context) => {
                                 const chart = context.chart;
                                 const { ctx } = chart;
-                                return gradientBackground(ctx); // Unique gradient background
+                                return gradientBackground(ctx); 
                             },
-                            fill: true, // Ensure the gradient is filled
+                            fill: true, 
                         },
                     ],
                 };
@@ -57,15 +54,15 @@ const MarketGraph = () => {
                     responsive: true,
                     scales: {
                         x: {
-                            display: false, // Hide x-axis
+                            display: false, 
                         },
                         y: {
-                            display: false, // Hide y-axis
+                            display: false, 
                         },
                     },
                     plugins: {
                         legend: {
-                            display: false, // Hide legend
+                            display: false, 
                         },
                     },
                 };
@@ -74,13 +71,13 @@ const MarketGraph = () => {
                     <div key={crypto.id} className="bg-menuDark p-4 rounded-lg shadow-md">
                         <div className="flex items-center mb-2">
                             <img src={crypto.logo} alt={`${crypto.name} logo`} className="w-8 h-8 mr-2" />
-                            <h2 className="text-lg font-semibold text-white">{crypto.name} ({crypto.currency})</h2>
+                            <h2 className="text-sm font-semibold text-white">{crypto.name} ({crypto.currency})</h2>
                         </div>
                         <Line data={data} options={options} ref={chartRef} />
                         <div className="flex justify-between items-center mt-2">
-                            <p className="text-white">{crypto.balance} {crypto.currency}</p>
+                            <p className="text-white text-sm">{crypto.balance} {crypto.currency}</p>
                             <div className="flex items-center">
-                                <p className={`text-lg ${percentageChange >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                                <p className={`text-sm ${percentageChange >= 0 ? 'text-green-500' : 'text-red-500'}`}>
                                     {percentageChange.toFixed(2)}%
                                 </p>
                                 {percentageChange >= 0 ? (
