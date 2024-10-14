@@ -8,7 +8,7 @@ const SearchBar = ({ onSearch, onFocus, onBlur }) => {
 
   return (
     <div className="p-2 bg-surface">
-      <div className="flex items-center bg-menuDark rounded-full p-3">
+      <div className="flex items-center bg-menuDark rounded-md p-3">
         <CiSearch className="text-white mr-3 text-xl" />
         <input
           type="text"
