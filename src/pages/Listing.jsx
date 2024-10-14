@@ -2,8 +2,15 @@ import NotificationPopup from "../components/Popup/NotificationPopup"
 import data from '@data/cryptoData';
 import MarketOne from '@components/Market/MarketOne'
 import { IoSearch } from "react-icons/io5";
+import { useBoundStore } from "../store";
 
 const ListingPage = () => {
+
+    const { modal, setModalState } = useBoundStore()
+
+    const onHandleClicked = (crypto) => {
+        setModalState({ swap: { isOpen: true } });
+    }
 
     return (
         <div className="bg-backdrop min-h-screen text-white p-2">
@@ -18,7 +25,7 @@ const ListingPage = () => {
                 </div>
             </div>
             <div className="mt-2">
-                {data.map((crypto, index) => <MarketOne key={index} crypto={crypto} />)}
+                {data.map((crypto, index) => <MarketOne key={index} crypto={crypto} onHandleClicked={onHandleClicked} />)}
             </div>
         </div>
     )
