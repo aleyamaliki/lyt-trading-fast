@@ -16,6 +16,8 @@ import Home from "./pages/Home.jsx";
 import Earn from "./pages/Earn.jsx";
 import WalletProfile from "./pages/WalletProfile.jsx";
 import Token from "./pages/Token.jsx";
+import BuyDialog from "./components/Dialog/Buy.jsx";
+import SellDialog from "./components/Dialog/Sell.jsx";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -54,6 +56,8 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <SwapInDialog />
+      <BuyDialog />
+      <SellDialog />
       <RouterProvider router={router} />
     </QueryClientProvider>
   )
