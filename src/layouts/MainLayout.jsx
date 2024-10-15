@@ -28,7 +28,7 @@ const MainLayout = () => {
                 {headerComponent}
             </header>
             
-            <main className="flex-grow overflow-y-auto">
+            <main className="flex-grow overflow-y-auto p-2">
                 <Outlet />
             </main>
 

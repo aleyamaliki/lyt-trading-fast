@@ -15,6 +15,7 @@ const queryClient = new QueryClient()
 import Home from "./pages/Home.jsx";
 import Earn from "./pages/Earn.jsx";
 import WalletProfile from "./pages/WalletProfile.jsx";
+import Token from "./pages/Token.jsx";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const App = () => {
         {
           path: "/tokens",
           element: <ListingPage />,
+        },
+        {
+          path: "/token/:id",
+          element: <Token />,
         },
         {
           path: "/walletprofile",
