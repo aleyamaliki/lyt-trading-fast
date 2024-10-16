@@ -1,6 +1,6 @@
-const TextSubtitle = ({children}) => {
+const TextSubtitle = ({children, className}) => {
     return  (
-        <span className="text-sm text-gray-400">{children}</span>
+        <span className={`text-sm text-gray-400 ${className}`}>{children}</span>
     )
 }
 

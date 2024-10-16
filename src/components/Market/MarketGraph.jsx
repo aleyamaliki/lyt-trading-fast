@@ -72,12 +72,12 @@ const MarketGraph = () => {
 
                 return (
                     <div key={crypto.id} className="bg-menuDark p-4 rounded-lg shadow-md">
-                        <div className="flex items-center mb-2">
+                        {/* <div className="flex items-center mb-2">
                             <img src={crypto.logo} alt={`${crypto.name} logo`} className="w-8 h-8 mr-2" />
                             <h2 className="text-lg font-semibold text-white">{crypto.name} ({crypto.currency})</h2>
-                        </div>
+                        </div> */}
                         <Line data={data} options={options} ref={chartRef} />
-                        <div className="flex justify-between items-center mt-2">
+                        {/* <div className="flex justify-between items-center mt-2">
                             <p className="text-white">{crypto.balance} {crypto.currency}</p>
                             <div className="flex items-center">
                                 <p className={`text-lg ${percentageChange >= 0 ? 'text-green-500' : 'text-red-500'}`}>
@@ -89,7 +89,7 @@ const MarketGraph = () => {
                                     <MdArrowDownward className="text-red-500 ml-1" />
                                 )}
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 );
             })}

@@ -3,6 +3,8 @@ import { resetters } from '.'
 const initialModal = {
   modal: {
     swap: { isOpen: false },
+    buy: { isOpen: false, token: {} },
+    sell: { isOpen: false, token: {}, available: 0 }
   },
 }
 
