@@ -1,7 +1,7 @@
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 
-const SearchBar = ({ onSearch, onFocus, onBlur }) => {
+const SearchBar = ({ onSearch, onFocus, onBlur, placeholder }) => {
   const handleInputChange = (e) => {
     onSearch(e.target.value);
   };
@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch, onFocus, onBlur }) => {
         <CiSearch className="text-white mr-3 text-xl" />
         <input
           type="text"
-          placeholder="Swap over 210.00 tokens on more than 10 chains"
+          placeholder={placeholder}
           className="bg-transparent text-white w-full focus:outline-none text-xs"
           onChange={handleInputChange}
           onFocus={onFocus}

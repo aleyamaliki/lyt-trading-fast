@@ -27,7 +27,7 @@ const CollapsibleHeader = ({ tabs, activeTab, onTabChange, onSearch }) => {
       }}
     >
       <ExchangeHeader />
-      <SearchBar onSearch={onSearch} />
+      <SearchBar onSearch={onSearch} placeholder="Search here" />
       <TabBar tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} />
     </div>
   );
