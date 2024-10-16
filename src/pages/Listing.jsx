@@ -3,13 +3,14 @@ import data from '@data/cryptoData';
 import MarketOne from '@components/Market/MarketOne'
 import { IoSearch } from "react-icons/io5";
 import { useBoundStore } from "../store";
+import { useNavigate } from "react-router-dom";
 
 const ListingPage = () => {
 
-    const { modal, setModalState } = useBoundStore()
+    const navigate = useNavigate()
 
-    const onHandleClicked = (crypto) => {
-        setModalState({ swap: { isOpen: true } });
+    const onHandleClicked = (mint) => {
+        navigate(`/token/${mint}`)
     }
 
     return (
@@ -25,7 +26,7 @@ const ListingPage = () => {
                 </div>
             </div>
             <div className="mt-2">
-                {data.map((crypto, index) => <MarketOne key={index} crypto={crypto} onHandleClicked={onHandleClicked} />)}
+                {data.map((crypto, index) => <MarketOne key={index} crypto={crypto} onHandleClicked={() => onHandleClicked(1)} />)}
             </div>
         </div>
     )
