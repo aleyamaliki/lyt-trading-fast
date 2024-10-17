@@ -3,7 +3,7 @@ import CryptoItem from "./CryptoItem";
 
 const CryptoList = ({ cryptoData }) => {
   return (
-    <div className="bg-surface pt-[165px]">
+    <div className="bg-surface ">
       {cryptoData.map((crypto) => (
         <CryptoItem key={crypto.name} {...crypto} />
       ))}
