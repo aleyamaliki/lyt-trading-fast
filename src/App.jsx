@@ -18,9 +18,15 @@ import WalletProfile from "./pages/WalletProfile.jsx";
 import Token from "./pages/Token.jsx";
 import BuyDialog from "./components/Dialog/Buy.jsx";
 import SellDialog from "./components/Dialog/Sell.jsx";
+<<<<<<< HEAD
 import LoginPage from "./pages/Login.jsx";
 import Referral from "./pages/Referral.jsx";
 import NeedLyt from "./pages/NeedLyt.jsx";
+=======
+import Complete from "./pages/Complete.jsx";
+import Profile from "./pages/Profile.jsx";
+import UserReferral from "./pages/UserReferral.jsx";
+>>>>>>> upstream/main
 
 const App = () => {
   const router = createBrowserRouter([
@@ -63,6 +69,18 @@ const App = () => {
         {
           path: "/walletprofile",
           element: <WalletProfile />,
+        },
+        {
+          path: "/complete",
+          element: <Complete />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/userreferral",
+          element: <UserReferral />,
         },
       ],
     },
