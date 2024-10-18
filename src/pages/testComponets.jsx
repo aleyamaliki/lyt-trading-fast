@@ -8,10 +8,10 @@ import WelcomeHeader from "../components/Header/WelcomeHeader";
 function TestComponents() {
   return (
     <>
-      <WelcomeHeader userName="Tony Nguyen" />
+      {/* <WelcomeHeader userName="Tony Nguyen" />
       <LatestRecipient recipients={recipientData} />
-      <TabSelector />
-      {/* <AllRecipients recipients={recipientData} /> */}
+      <TabSelector /> */}
+      <AllRecipients recipients={recipientData} />
     </>
   );
 }
