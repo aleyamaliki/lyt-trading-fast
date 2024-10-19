@@ -11,16 +11,22 @@ import ListingPage from "./pages/Listing.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SwapInDialog from "./components/Dialog/SwapIn.jsx";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 import Home from "./pages/Home.jsx";
 import Earn from "./pages/Earn.jsx";
 import WalletProfile from "./pages/WalletProfile.jsx";
 import Token from "./pages/Token.jsx";
 import BuyDialog from "./components/Dialog/Buy.jsx";
 import SellDialog from "./components/Dialog/Sell.jsx";
+<<<<<<< HEAD
+import LoginPage from "./pages/Login.jsx";
+import Referral from "./pages/Referral.jsx";
+import NeedLyt from "./pages/NeedLyt.jsx";
+=======
 import Complete from "./pages/Complete.jsx";
 import Profile from "./pages/Profile.jsx";
 import UserReferral from "./pages/UserReferral.jsx";
+>>>>>>> upstream/main
 
 const App = () => {
   const router = createBrowserRouter([
@@ -34,11 +40,23 @@ const App = () => {
         },
         {
           path: "/home",
-          element: <Home />
+          element: <Home />,
+        },
+        {
+          path: "/login",
+          element: <LoginPage />,
+        },
+        {
+          path: "/referral",
+          element: <Referral />,
+        },
+        {
+          path: "/needLYT",
+          element: <NeedLyt />,
         },
         {
           path: "/earn",
-          element: <Earn />
+          element: <Earn />,
         },
         {
           path: "/tokens",
@@ -75,7 +93,7 @@ const App = () => {
       <SellDialog />
       <RouterProvider router={router} />
     </QueryClientProvider>
-  )
+  );
 };
 
 export default App;
